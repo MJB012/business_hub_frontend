@@ -6,6 +6,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import BaseInput from '../../components/base-input/BaseInput';
+import BaseButton from '../../components/base-button/BaseButton';
 import { UserEntity } from '../../components/entities/user.entity';
 
 const SignUp = () => {
@@ -169,14 +170,17 @@ const SignUp = () => {
           </div>
 
           <div>
-            <button
+            <BaseButton
               type="submit"
               disabled={formik.isSubmitting}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium 
-                       text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-            >
-              {formik.isSubmitting ? 'Creating Account...' : 'Create Account'}
-            </button>
+              isLoading={formik.isSubmitting}
+              label={formik.isSubmitting ? 'Creating Account...' : 'Create Account'}
+              fullWidth
+              style={{ 
+                backgroundColor: '#000000',
+                color: '#ffffff'
+              }}
+            />
           </div>
         </form>
       </div>
