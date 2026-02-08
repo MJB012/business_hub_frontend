@@ -1,4 +1,5 @@
-import React from "react";
+// src/components/sidebar-item/SideBarItem.tsx
+import React from 'react';
 
 interface SidebarItemProps {
   icon: React.ReactNode;
@@ -6,22 +7,20 @@ interface SidebarItemProps {
   active?: boolean;
 }
 
-export function SidebarItem({
-  icon,
-  label,
-  active = false,
-}: SidebarItemProps) {
+export const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
   return (
     <div
-      className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer
-      ${
-        active
-          ? "bg-black text-white"
-          : "text-gray-700 hover:bg-gray-100"
-      }`}
+      className={`
+        flex items-center gap-3 px-3 py-2 rounded-md transition-colors cursor-pointer font-medium
+        ${
+          active
+            ? "bg-black text-white" // Active: Black BG, White Text (Matches Image)
+            : "text-black hover:bg-gray-100 hover:text-black" // Inactive
+        }
+      `}
     >
       {icon}
       <span>{label}</span>
     </div>
   );
-}
+};
