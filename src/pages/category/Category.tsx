@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { X, Plus, Search, FolderOpen, Pencil, Trash2 } from 'lucide-react';
+import { X, Plus, FolderOpen, Pencil, Trash2 } from 'lucide-react';
 import { type ColumnDef } from '@tanstack/react-table';
 import DataTable from '../../components/data-table/DataTable';
 import SearchBar from '../../components/search-bar/SearchBar';
