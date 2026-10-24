@@ -2,11 +2,10 @@ import React from "react";
 interface StatCardProps {
     title: string;
     value: string;
-    subtitle: string;
-    icon: React.ReactNode;
+    subtitle?: string;
+    icon?: React.ReactNode;
     negative?: boolean;
 }
-
 
 export function StatCard({
     title,
@@ -19,9 +18,8 @@ export function StatCard({
         <div className="bg-white rounded-2xl border-[#0000001a] outline outline-[#0000001a] p-6 flex flex-col justify-between w-full">
             <div className="flex items-center justify-between">
                 <p className="text-gray-500 font-medium">{title}</p>
-                <div className="text-gray-400">{icon}</div>
+                {icon && <div className="text-gray-400">{icon}</div>}
             </div>
-
 
             <div className="mt-6">
                 <h2
@@ -29,7 +27,7 @@ export function StatCard({
                 >
                     {value}
                 </h2>
-                <p className="text-sm text-gray-500 mt-1">{subtitle}</p>
+                {subtitle && <p className="text-sm text-gray-500 mt-1">{subtitle}</p>}
             </div>
         </div>
     );
